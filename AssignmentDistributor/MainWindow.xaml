@@ -1,12 +1,47 @@
-﻿<Window x:Class="AssignmentDistributor.MainWindow"
+﻿<mah:MetroWindow x:Class="AssignmentDistributor.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AssignmentDistributor"
+        Title="MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        WindowTransitionsEnabled="True"
+        Height="350" Width="525" WindowStartupLocation="CenterScreen" Icon="Res/software.ico" ResizeMode="NoResize">
     <Grid>
-        
+        <!-- Your custom content here -->
     </Grid>
-</Window>
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button x:Name="button_settings" Content="设置" Click="button_settings_Click"/>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl>
+            <Controls:Flyout x:Name="Flyout_Settings" Header="设置" Position="Right" Width="220" Theme="Inverse" IsOpenChanged="Flyout_Settings_IsOpenChanged" AnimateOpacity="True">
+                <ScrollViewer HorizontalAlignment="Left" Margin="10,0,0,0" Width="200">
+                    <Grid>
+                        <Grid x:Name="grid_setPeopleNum" Height="70" VerticalAlignment="Top" Visibility="Visible" Margin="0,10,-0.4,0">
+                            <Slider x:Name="slider_peopleNum" Margin="0,31,1,0" VerticalAlignment="Top" Height="26" IsMoveToPointEnabled="True" Maximum="20" Minimum="1" Value="4" SmallChange="1" IsSnapToTickEnabled="True"/>
+                            <Label x:Name="label_setPeopleNum" Content="寝室人数：" Margin="0,-5,90,39"/>
+                            <Label x:Name="label_peopleNum" Content="{Binding Value, ElementName=slider_peopleNum}" HorizontalAlignment="Left"  RenderTransformOrigin="-0.191,0.414" Margin="101,0,0,35" Width="29"/>
+                        </Grid>
+                        <Grid x:Name="grid_setPeoplePerDayNum" Height="70" VerticalAlignment="Top" Visibility="Visible" Margin="0,85,-0.4,0">
+                            <Slider x:Name="slider_peoplePerDayNum" Margin="0,31,1,0" VerticalAlignment="Top" Height="26" IsMoveToPointEnabled="True" Maximum="{Binding Value, ElementName=slider_peopleNum}" Minimum="1" Value="1" SmallChange="1" IsSnapToTickEnabled="True"/>
+                            <Label x:Name="label_setPeoplePerDayNum" Content="每日执勤人数：" Margin="0,-5,90,39"/>
+                            <Label x:Name="label_peoplePerDayNum" Content="{Binding Value, ElementName=slider_peoplePerDayNum}" HorizontalAlignment="Left"  RenderTransformOrigin="-0.191,0.414" Margin="101,-5,0,40" Width="29"/>
+                        </Grid>
+                        <Grid x:Name="grid_setRoundNum" Height="70" VerticalAlignment="Top" Visibility="Visible" Margin="0,160,-0.4,0">
+                            <Slider x:Name="slider_roundNum" Margin="0,31,1,0" VerticalAlignment="Top" Height="26" IsMoveToPointEnabled="True" Maximum="20" Minimum="1" Value="10" SmallChange="1" IsSnapToTickEnabled="True"/>
+                            <Label x:Name="label_setRoundNum" Content="周期数：" Margin="0,-5,90,39"/>
+                            <Label x:Name="label_roundNum" Content="{Binding Value, ElementName=slider_roundNum}" HorizontalAlignment="Left"  RenderTransformOrigin="-0.191,0.414" Margin="101,-4,0,39" Width="29"/>
+                        </Grid>
+                        <Button x:Name="button_about" Content="关于" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="48" FontWeight="Normal" FontFamily="Arial Black" FontSize="12" Margin="128,235,0,0" Click="button_about_Click"/>
+                    </Grid>
+                </ScrollViewer>
+            </Controls:Flyout>
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>
+</mah:MetroWindow>

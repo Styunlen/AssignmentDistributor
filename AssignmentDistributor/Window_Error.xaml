@@ -1,0 +1,22 @@
+﻿<Controls:MetroWindow x:Class="AssignmentDistributor.Window_Error"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AssignmentDistributor"
+        mc:Ignorable="d"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        WindowTransitionsEnabled="true"
+        Title="Window_Error" Height="350" Width="525" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Closed="MetroWindow_Closed" Loaded="MetroWindow_Loaded">
+    <Controls:MetroWindow.Background>
+        <ImageBrush ImageSource="Res/Error.jpg"/>
+    </Controls:MetroWindow.Background>
+    <Grid Margin="0" Width="525">
+        <TextBox x:Name="textBox_error" HorizontalAlignment="Left" Margin="0,86,0,0" TextWrapping="Wrap" Text="彩蛋！！！&#xD;&#xA;第一次运行程序吧！&#xD;&#xA;这是设计者为程序设计的第一个彩蛋哦！&#xD;&#xA;也是他第一次设计彩蛋呢！" Background="#B2FFFFFF" BorderBrush="{x:Null}" FontWeight="Bold" FontSize="18" IsReadOnly="True" VerticalScrollBarVisibility="Auto" Width="525" BorderThickness="0"/>
+        <Label x:Name="label_title" Content="▂▃▄▅▆▇▉▊出错了▇▆▅▄▃▂▁" Margin="0,0,-249,0" VerticalAlignment="Top" Height="76" FontSize="28" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" HorizontalAlignment="Left" Width="525"/>
+        <Label x:Name="label_count" Content="累计第{n}次重启" HorizontalAlignment="Left" Height="29" Margin="10,0,0,0" VerticalAlignment="Top" Width="102"/>
+
+    </Grid>
+</Controls:MetroWindow>
