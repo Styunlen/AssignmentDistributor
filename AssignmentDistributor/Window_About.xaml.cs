@@ -53,7 +53,7 @@ namespace AssignmentDistributor
             v.ContinueWith((ret) => {
                 if (ret.Result == MessageDialogResult.Affirmative)
                 {
-                    System.Diagnostics.Process.Start("https://styunlen.cn/softlib");
+                    System.Diagnostics.Process.Start("https://styunlen.cn/softlib/AssignmentDistributor");
                 }
             });
         }

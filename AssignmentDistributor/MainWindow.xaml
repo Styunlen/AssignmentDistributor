@@ -5,28 +5,28 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="MainWindow"
+        Title="任务分配"
         mc:Ignorable="d"
         GlowBrush="{DynamicResource AccentColorBrush}"
         WindowTransitionsEnabled="True"
-        Height="350" Width="525" WindowStartupLocation="CenterScreen" Icon="Res/software.ico" ResizeMode="NoResize" Loaded="MetroWindow_Loaded">
+        Height="350" Width="525" WindowStartupLocation="CenterScreen" Icon="Res/software.ico" ResizeMode="CanMinimize" Loaded="MetroWindow_Loaded" ShowMaxRestoreButton="False" WindowStyle="ThreeDBorderWindow" IsMaxRestoreButtonEnabled="False">
     <Grid>
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="321" Margin="0,0,0,0" VerticalAlignment="Top" Width="518">
             <TabItem Header="生成">
                 <Grid>
-                    <Controls:Tile x:Name="tile_generate" Count="" Content="生成" FontSize="24" Height="Auto" Margin="164,80,164,135.6" Width="Auto" Click="tile_generate_Click"/>
-                    <Label x:Name="label_tips" Content="※生成参数，请在设置中调整" Margin="164,164,164,83.6" RenderTransformOrigin="-0.529,0.27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Controls:Tile x:Name="tile_generate" Count="" Content="生成" FontSize="24" Height="Auto" Margin="164,66,164.4,149.6" Width="Auto" Click="tile_generate_Click"/>
+                    <Label x:Name="label_tips" Content="※生成参数，请在设置中调整" Margin="164,150,164.4,97.6" RenderTransformOrigin="-0.529,0.27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="今日执勤">
+            <TabItem Header="今日值勤">
                 <Grid>
-                    <Label x:Name="label_timeNow" Content="" HorizontalAlignment="Left" Margin="163,73,0,0" VerticalAlignment="Top" Width="195" FontSize="16"/>
-                    <Label x:Name="label_index" Content="" HorizontalAlignment="Left" Margin="163,110,0,0" VerticalAlignment="Top" Width="195" FontSize="16"/>
-                    <TextBox x:Name="textBox_hitokoto" Height="49" Margin="10,215,10.4,0" TextWrapping="Wrap" Text="一言获取中..." VerticalAlignment="Top" FontSize="16" IsReadOnly="True" BorderBrush="{x:Null}" BorderThickness="0"/>
-
+                    <Label x:Name="label_timeNow" Content="" Margin="40,73,40,0" VerticalAlignment="Top" FontSize="22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+                    <Label x:Name="label_index" Content="未获取到值勤信息，请先前往生成页面生成" Margin="40,120,40,0" VerticalAlignment="Top" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
                 </Grid>
             </TabItem>
         </TabControl>
+        <TextBox x:Name="textBox_hitokoto" Height="50" Margin="10,246,10.4,0" TextWrapping="Wrap" Text="一言获取中..." VerticalAlignment="Top" FontSize="16" IsReadOnly="True" BorderBrush="{x:Null}" BorderThickness="0" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="textBox_hitokoto_author" Height="33" Margin="10,278,10.4,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" IsReadOnly="True" BorderBrush="{x:Null}" BorderThickness="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Background="{x:Null}"/>
         <!-- Your custom content here -->
     </Grid>
     <Controls:MetroWindow.RightWindowCommands>
