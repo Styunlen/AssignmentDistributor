@@ -107,13 +107,13 @@ namespace AssignmentDistributor
                             dayFlags[index] = true;
                             index++;//将从0开始的索引值，转换为从1开始的序号
                             ret += index.ToString() + " ";
-                            time = time.AddDays(1);
                         }
                         for (int z = 0; z < PeopleNum; z++)
                         {
                             dayFlags[z] = false;
                         }
                         ret += "\t" + time.DayOfWeek + "\t" + time.ToShortDateString() + "\r\n";
+                        time = time.AddDays(1);
                     }
                     for (int j = 0; j < PeopleNum; j++)
                     {
@@ -128,6 +128,7 @@ namespace AssignmentDistributor
                 sw.Close();
                 this.ShowMessageAsync("提示", "生成成功！");
                 Process.Start(Environment.CurrentDirectory + "./sheet.xls");
+                MetroWindow_Loaded(null,null);
             }
             catch (Exception ex)
             {
