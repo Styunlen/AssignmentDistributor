@@ -9,8 +9,24 @@
         mc:Ignorable="d"
         GlowBrush="{DynamicResource AccentColorBrush}"
         WindowTransitionsEnabled="True"
-        Height="350" Width="525" WindowStartupLocation="CenterScreen" Icon="Res/software.ico" ResizeMode="NoResize">
+        Height="350" Width="525" WindowStartupLocation="CenterScreen" Icon="Res/software.ico" ResizeMode="NoResize" Loaded="MetroWindow_Loaded">
     <Grid>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="321" Margin="0,0,0,0" VerticalAlignment="Top" Width="518">
+            <TabItem Header="生成">
+                <Grid>
+                    <Controls:Tile x:Name="tile_generate" Count="" Content="生成" FontSize="24" Height="Auto" Margin="164,80,164,135.6" Width="Auto" Click="tile_generate_Click"/>
+                    <Label x:Name="label_tips" Content="※生成参数，请在设置中调整" Margin="164,164,164,83.6" RenderTransformOrigin="-0.529,0.27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="今日执勤">
+                <Grid>
+                    <Label x:Name="label_timeNow" Content="" HorizontalAlignment="Left" Margin="163,73,0,0" VerticalAlignment="Top" Width="195" FontSize="16"/>
+                    <Label x:Name="label_index" Content="" HorizontalAlignment="Left" Margin="163,110,0,0" VerticalAlignment="Top" Width="195" FontSize="16"/>
+                    <TextBox x:Name="textBox_hitokoto" Height="49" Margin="10,215,10.4,0" TextWrapping="Wrap" Text="一言获取中..." VerticalAlignment="Top" FontSize="16" IsReadOnly="True" BorderBrush="{x:Null}" BorderThickness="0"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
         <!-- Your custom content here -->
     </Grid>
     <Controls:MetroWindow.RightWindowCommands>

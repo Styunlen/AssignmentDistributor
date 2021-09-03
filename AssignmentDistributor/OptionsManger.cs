@@ -94,9 +94,9 @@ namespace AssignmentDistributor
                     string[] nameVal = temp.Split(':');//每行数据既包含选项名，也包含选项值(格式:"optName:optVal")
                     if (nameVal[0] == optionName)
                     {
+                        Options[i] = String.Format("{0}:{1}", optionName, optionVal);
                         return true;
-                    }
-                    Options[i] = String.Format("{0}:{1}", optionName, optionVal);
+                    }        
                 }
             }
             catch (Exception ex)
@@ -153,11 +153,9 @@ namespace AssignmentDistributor
         }
 
         static public void ResetOptionToDefault()
-        {
-            StreamWriter sw = new StreamWriter(g_optFile, false);
+        {  
             OptionsManger.CleanOptions();
-            sw.WriteLine(g_strOptHead);//写入配置文件版本信息
-            sw.Close();
+            Options.Add(g_strOptHead);
             OptionsManger.AddOptionVal("PeopleNum", "4");
             OptionsManger.AddOptionVal("PeoplePerDayNum", "1");
             OptionsManger.AddOptionVal("RoundNum", "10");
